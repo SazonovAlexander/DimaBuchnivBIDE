@@ -3,11 +3,11 @@ import UIKit
 
 final class TabBarAdminController: UITabBarController {
     
-//    let examTableViewController = ExamTableViewController()
-//    let scheduleTableViewController = ScheduleTableViewController()
-//    let teacherTableViewController = TeacherTableViewController()
-//    let studentTableViewController = StudentTableViewController()
-//    let groupTableViewController = PartyTableViewController()
+    let departmentViewController = DepartmentViewController()
+    let doctorViewController = DoctorViewController()
+    let patientViewController = PatientViewController()
+    let serviceViewController = ServiceViewController()
+    let visitViewController = VisitViewController()
     //MARK: - Initializers
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -28,20 +28,21 @@ final class TabBarAdminController: UITabBarController {
     
     private func setVC() {
         
-//        studentTableViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "person.3.sequence"), selectedImage: nil)
-//        scheduleTableViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "calendar"), selectedImage: nil)
-//        examTableViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "rublesign.circle.fill"), selectedImage: nil)
-//        teacherTableViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "person.wave.2"), selectedImage: nil)
-//        groupTableViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "rectangle.stack.badge.person.crop"), selectedImage: nil)
-//        
-//        let examNavController = UINavigationController(rootViewController: examTableViewController)
-//        setViewControllers([scheduleTableViewController, examNavController, teacherTableViewController, studentTableViewController, groupTableViewController], animated: true)
+        departmentViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "cross.case.circle"), selectedImage: nil)
+        doctorViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "syringe"), selectedImage: nil)
+        patientViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "heart.circle"), selectedImage: nil)
+        serviceViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "banknote"), selectedImage: nil)
+        visitViewController.tabBarItem = UITabBarItem(title: "", image: UIImage(systemName: "figure.walk"), selectedImage: nil)
+        let visitNavController = UINavigationController(rootViewController: visitViewController)
+        let patientNavControlelr = UINavigationController(rootViewController: patientViewController)
+        setViewControllers([departmentViewController, doctorViewController, patientNavControlelr, serviceViewController, visitNavController], animated: true)
     }
     
     private func setApperance() {
                 
-    
-        
+        tabBar.tintColor = .white
+        tabBar.barTintColor = .black
+        tabBar.backgroundColor = .black
         
     }
     
